@@ -13,7 +13,8 @@
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with the diagnostics skill.  If not, see <http://www.gnu.org/licenses/>.
+# along with the diagnostics skill.
+# If not, see <http://www.gnu.org/licenses/>.
 
 from os.path import dirname, exists, isfile
 from os import access, X_OK
@@ -28,6 +29,7 @@ import json
 __author__ = 'the7erm'
 
 LOGGER = getLogger(__name__)
+
 
 def is_exe(fpath):
     # Attribution: http://stackoverflow.com/a/377028/2444609
@@ -96,7 +98,6 @@ class SimpleMediaSkill(MycroftSkill):
             else:
                 self.speak_dialog("error.executing", spec)
 
-
     def handle_play_intent(self, message):
         LOGGER.debug("handle_play_intent")
         self.run_cmd("play")
@@ -121,7 +122,6 @@ class SimpleMediaSkill(MycroftSkill):
                 "playing": res
             }
             self.speak_dialog("whats_playing", spec)
-
 
     def stop(self):
         pass
