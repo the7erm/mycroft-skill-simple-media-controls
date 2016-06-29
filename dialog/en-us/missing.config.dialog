@@ -1,0 +1,1 @@
+mycroft.ini seems to be missing section for Simple Media Skill.  Please add the section and restart the skill service after you've done so.
