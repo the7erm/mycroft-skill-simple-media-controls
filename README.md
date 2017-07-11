@@ -30,22 +30,30 @@ The commands are simple.
             who is this?
             what band is this?
 
-# Configuring `mycroft.ini`
-```
-[SimpleMediaSkill]
-play = /home/erm/bin/play.sh
-pause = /home/erm/bin/pause.sh
-next = /home/erm/bin/next.sh
-prev = /home/erm/bin/prev.sh
-whats_playing = /home/erm/bin/playing.sh
+# Configuring `mycroft.conf`
+```json
+{
+    "SimpleMediaSkill": {
+        "play": "/home/erm/bin/play.sh",
+        "pause": "/home/erm/bin/pause.sh",
+        "next": "/home/erm/bin/next.sh",
+        "prev": "/home/erm/bin/prev.sh",
+        "whats_playing": "/home/erm/bin/playing.sh"
+    }
+}
 ```
 
 # Install
-    mkdir -p ~/.mycroft/third_party_skills/
-    cd ~/.mycroft/third_party_skills/
-    git clone https://github.com/the7erm/mycroft-skill-simple-media-controls.git simpile_media_controls
-    # restart the skills service
-    ./mycroft.sh restart
+
+```
+cd /opt/mycroft/skills
+git clone https://github.com/the7erm/mycroft-skill-diagnostics.git skill-simpile-media-controls
+cd skill-simpile-media-controls
+workon mycroft
+# if that doesn't work try `source <path to virtualenv/bin/activate>`
+pip install -r requirements.txt
+# restart the skills service
+```
 
 # Sample scripts
 I've written a couple of scripts to get you started.  Keep in mind these might not work if the screen saver is on.
